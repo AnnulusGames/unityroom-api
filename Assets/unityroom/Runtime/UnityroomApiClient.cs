@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using unityroom.Api.Internals;
+using Unityroom.Api.Internals;
 
-namespace unityroom.Api
+namespace Unityroom.Api
 {
     public class UnityroomApiClient : MonoBehaviour, IUnityroomApiClient
     {
@@ -42,10 +42,10 @@ namespace unityroom.Api
                 Debug.LogWarning($"[unityroom] 複数のUnityroomApiClientが見つかりました。重複したインスタンスを破棄します。", gameObject);
                 Destroy(gameObject);
             }
-            
+
             // シーンを切り替えても破棄されないようにする
             DontDestroyOnLoad(gameObject);
-            
+
             if (string.IsNullOrEmpty(HmacKey))
             {
                 Debug.LogError($"[unityroom] インスペクターにてHMAC認証用キーをセットしてください。", gameObject);

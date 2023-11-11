@@ -1,4 +1,4 @@
-namespace unityroom.Api.Internals
+namespace Unityroom.Api.Internals
 {
     internal static class Util
     {

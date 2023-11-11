@@ -3,7 +3,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace unityroom.Api.Internals
+namespace Unityroom.Api.Internals
 {
     internal class Scoreboard : MonoBehaviour
     {

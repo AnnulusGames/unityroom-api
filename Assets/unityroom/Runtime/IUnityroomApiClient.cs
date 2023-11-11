@@ -1,4 +1,4 @@
-namespace unityroom.Api
+namespace Unityroom.Api
 {
     public interface IUnityroomApiClient
     {

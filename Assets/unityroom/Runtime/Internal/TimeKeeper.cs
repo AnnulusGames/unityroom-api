@@ -1,4 +1,4 @@
-namespace unityroom.Api.Internals
+namespace Unityroom.Api.Internals
 {
     /// <summary>
     /// リクエスト送信間隔を管理

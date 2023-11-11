@@ -4,7 +4,7 @@ using System.Text;
 
 [assembly: InternalsVisibleTo("unityroom.Tests")]
 
-namespace unityroom.Api.Internals
+namespace Unityroom.Api.Internals
 {
     internal static class Hmac
     {
