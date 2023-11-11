@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using System;
 using System.Text;
 
-[assembly: InternalsVisibleTo("unityroom.Tests")]
+[assembly: InternalsVisibleTo("Unityroom.Tests.Editor")]
 
 namespace Unityroom.Api.Internal
 {

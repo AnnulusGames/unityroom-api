@@ -1,0 +1,18 @@
+{
+    "name": "Unityroom.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ace1a962d6cb545a78234415708dae81"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

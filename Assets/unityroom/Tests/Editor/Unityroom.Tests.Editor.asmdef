@@ -1,10 +1,10 @@
 {
-    "name": "unityroom.Tests",
+    "name": "Unityroom.Tests.Editor",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "unityroom"
+        "Unityroom"
     ],
     "includePlatforms": [
         "Editor"
