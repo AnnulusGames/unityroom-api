@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using unityroom.Api.Internals;
+using Unityroom.Api.Internals;
 
-namespace Editor.unityroom.Tests
+namespace Unityroom.Tests.Editor
 {
     public class RetryCounterTest
     {

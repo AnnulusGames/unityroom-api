@@ -1,8 +1,8 @@
 using NUnit.Framework;
-using unityroom.Api;
-using unityroom.Api.Internals;
+using Unityroom.Api;
+using Unityroom.Api.Internals;
 
-namespace Editor.unityroom.Tests
+namespace Unityroom.Tests.Editor
 {
     public class ScoreHolderTest
     {
