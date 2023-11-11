@@ -10,7 +10,7 @@ namespace Demo
         public void OnClick()
         {
             _count++;
-            UnityroomApiClient.Instance.SendScore(1, _count, ScoreboardWriteMode.Always);
+            //UnityroomApiClient.Instance.SendScore(1, _count, ScoreboardWriteMode.Always);
         }
     }
 }
