@@ -1,6 +1,5 @@
 using NUnit.Framework;
-using Unityroom.Api;
-using Unityroom.Api.Internal;
+using Unityroom.Internal;
 
 namespace Unityroom.Tests.Editor
 {

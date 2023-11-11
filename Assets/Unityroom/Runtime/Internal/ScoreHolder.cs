@@ -1,6 +1,6 @@
 using System;
 
-namespace Unityroom.Api.Internal
+namespace Unityroom.Internal
 {
     /// <summary>
     /// ハイスコアを記録する

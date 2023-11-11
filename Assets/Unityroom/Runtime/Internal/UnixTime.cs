@@ -1,6 +1,6 @@
 using System;
 
-namespace Unityroom.Api.Internal
+namespace Unityroom.Internal
 {
     internal static class UnixTime
     {

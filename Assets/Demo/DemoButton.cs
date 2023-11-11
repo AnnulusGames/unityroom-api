@@ -1,5 +1,5 @@
 using UnityEngine;
-using Unityroom.Api;
+using Unityroom;
 
 namespace Demo
 {
