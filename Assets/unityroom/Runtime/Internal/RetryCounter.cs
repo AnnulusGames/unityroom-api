@@ -1,6 +1,6 @@
 using System;
 
-namespace Unityroom.Api.Internals
+namespace Unityroom.Api.Internal
 {
     internal class RetryCounter
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Unityroom.Api.Internals;
+using Unityroom.Api.Internal;
 
 namespace Unityroom.Api
 {
