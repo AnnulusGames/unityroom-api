@@ -20,8 +20,11 @@ namespace Unityroom
                 Debug.LogError(MESSAGE_SETTINGS_ASSET_NOT_FOUND);
                 return;
             }
-            
-            if (requestCount >= 10)
+
+            requestCount++;
+            CoroutineDispatcher.Instance.DelayedCall(5f, () => requestCount--);
+
+            if (requestCount >= 5)
             {
                 Debug.LogWarning(MESSAGE_TOO_MANY_REQUEST);
                 callback?.Invoke(false);
@@ -33,9 +36,7 @@ namespace Unityroom
             }
             else
             {
-                requestCount++;
                 CoroutineDispatcher.Instance.Run(ReportScoreEnumerator(scoreboardId, value, callback));
-                CoroutineDispatcher.Instance.DelayedCall(10f, () => requestCount--);
             }
         }
 
