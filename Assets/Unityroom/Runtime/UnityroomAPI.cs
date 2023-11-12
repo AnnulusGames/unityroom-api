@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Globalization;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.Networking;
 using Unityroom.Internal;
 
@@ -11,9 +10,16 @@ namespace Unityroom
     public static class UnityroomAPI
     {
         const string MESSAGE_REPORT_SCORE_ON_EDITOR = "[unityroom] Editor上でのReportScoreは常に失敗します。unityroomにゲームをアップロードすると正しく送信されます。";
+        const string MESSAGE_SETTINGS_ASSET_NOT_FOUND = "[unityroom] 設定ファイルが見つかりません。Project Settings > Untiyroom から設定ファイルのアセットを作成してください。";
 
         public static void ReportScore(int scoreboardId, float value, Action<bool> callback = null)
         {
+            if (UnityroomSettings.Instance == null)
+            {
+                Debug.LogError(MESSAGE_SETTINGS_ASSET_NOT_FOUND);
+                return;
+            }
+
 #if UNITY_EDITOR
             Debug.LogWarning(MESSAGE_REPORT_SCORE_ON_EDITOR);
             callback?.Invoke(false);
