@@ -20,12 +20,15 @@ namespace Unityroom
                 return;
             }
 
-#if UNITY_EDITOR
-            Debug.LogWarning(MESSAGE_REPORT_SCORE_ON_EDITOR);
-            callback?.Invoke(false);
-#else
-            CoroutineDispatcher.Instance.Run(ReportScoreEnumerator(scoreboardId, value, callback));
-#endif
+            if (Application.isEditor)
+            {
+                Debug.LogWarning(MESSAGE_REPORT_SCORE_ON_EDITOR);
+                callback?.Invoke(false);
+            }
+            else
+            {
+                CoroutineDispatcher.Instance.Run(ReportScoreEnumerator(scoreboardId, value, callback));
+            }
         }
 
         private static IEnumerator ReportScoreEnumerator(int scoreboardId, float value, Action<bool> callback)
