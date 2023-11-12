@@ -20,15 +20,15 @@ namespace Unityroom
                 Debug.LogError(MESSAGE_SETTINGS_ASSET_NOT_FOUND);
                 return;
             }
-
-            if (Application.isEditor)
-            {
-                Debug.LogWarning(MESSAGE_REPORT_SCORE_ON_EDITOR);
-                callback?.Invoke(false);
-            }
-            else if (requestCount >= 10)
+            
+            if (requestCount >= 10)
             {
                 Debug.LogWarning(MESSAGE_TOO_MANY_REQUEST);
+                callback?.Invoke(false);
+            }
+            else if (Application.isEditor)
+            {
+                Debug.LogWarning(MESSAGE_REPORT_SCORE_ON_EDITOR);
                 callback?.Invoke(false);
             }
             else
