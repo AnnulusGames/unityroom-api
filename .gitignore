@@ -74,3 +74,7 @@ crashlytics-build.properties
 
 # IDE
 .idea
+.vscode
+
+# DS_Store
+*.DS_Store
