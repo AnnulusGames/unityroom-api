@@ -11,6 +11,7 @@ namespace Unityroom.Internal
         static void Init()
         {
             _instance = new GameObject(nameof(CoroutineDispatcher)).AddComponent<CoroutineDispatcher>();
+            DontDestroyOnLoad(_instance);
         }
 
         private static CoroutineDispatcher _instance;
