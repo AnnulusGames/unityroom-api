@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -20,6 +21,17 @@ namespace Unityroom.Internal
         public void Run(IEnumerator routine)
         {
             StartCoroutine(routine);
+        }
+
+        public void DelayedCall(float delay, Action action)
+        {
+            StartCoroutine(DelayedCallEnumerator(delay, action));
+        }
+
+        static IEnumerator DelayedCallEnumerator(float delay, Action action)
+        {
+            yield return new WaitForSecondsRealtime(delay);
+            action?.Invoke();
         }
     }
 }

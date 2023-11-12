@@ -11,6 +11,7 @@ namespace Unityroom
     {
         const string MESSAGE_REPORT_SCORE_ON_EDITOR = "[unityroom] Editor上でのReportScoreは常に失敗します。unityroomにゲームをアップロードすると正しく送信されます。";
         const string MESSAGE_SETTINGS_ASSET_NOT_FOUND = "[unityroom] 設定ファイルが見つかりません。Project Settings > Untiyroom から設定ファイルのアセットを作成してください。";
+        const string MESSAGE_TOO_MANY_REQUEST = "[unityroom] 呼び出し回数が多すぎます。一定時間を空けてリトライしてください。";
 
         public static void ReportScore(int scoreboardId, float value, Action<bool> callback = null)
         {
@@ -25,9 +26,16 @@ namespace Unityroom
                 Debug.LogWarning(MESSAGE_REPORT_SCORE_ON_EDITOR);
                 callback?.Invoke(false);
             }
+            else if (requestCount >= 10)
+            {
+                Debug.LogWarning(MESSAGE_TOO_MANY_REQUEST);
+                callback?.Invoke(false);
+            }
             else
             {
+                requestCount++;
                 CoroutineDispatcher.Instance.Run(ReportScoreEnumerator(scoreboardId, value, callback));
+                CoroutineDispatcher.Instance.DelayedCall(10f, () => requestCount--);
             }
         }
 
@@ -59,5 +67,10 @@ namespace Unityroom
 
             callback?.Invoke(request.result == UnityWebRequest.Result.Success);
         }
+
+        static int requestCount;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void ResetRequestCount() => requestCount = 0;
     }
 }
