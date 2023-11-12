@@ -28,7 +28,7 @@ namespace Unityroom.Internal
             StartCoroutine(DelayedCallEnumerator(delay, action));
         }
 
-        static IEnumerator DelayedCallEnumerator(float delay, Action action)
+        IEnumerator DelayedCallEnumerator(float delay, Action action)
         {
             yield return new WaitForSecondsRealtime(delay);
             action?.Invoke();
