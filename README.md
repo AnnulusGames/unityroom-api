@@ -1,6 +1,9 @@
 # Unityroom API
  Unofficial API client for unityroom
 
+>[!WARNING]
+> このリポジトリはアーカイブされました。代わりに[unityroom-sdk](https://github.com/unityroom/unityroom-sdk)を利用してください。
+
 Unityroom APIは、UnityからunityroomのAPIを利用するためのライブラリです。このリポジトリは[unityroom-client-library](https://github.com/naichilab/unityroom-client-library)のForkであり、よりシンプルで扱いやすいC# APIの提供を目標としています。
 
 ## セットアップ
